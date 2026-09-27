@@ -1,0 +1,14 @@
+{
+  "name": "notify",
+  "version": "1.0.0",
+  "description": "Desktop notification when a Claude Code session finishes or waits for you. On Windows the toast stays until dismissed and clicking it jumps to the right Windows Terminal tab.",
+  "author": {
+    "name": "Marek Swiechowicz",
+    "url": "https://github.com/MarekSwiechowicz"
+  },
+  "homepage": "https://github.com/MarekSwiechowicz/claude-code-notify",
+  "repository": "https://github.com/MarekSwiechowicz/claude-code-notify",
+  "license": "MIT",
+  "keywords": ["hooks", "notifications", "toast", "windows-terminal"],
+  "hooks": "./hooks/hooks.json"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "claude-code-notify",
+  "owner": {
+    "name": "Marek Swiechowicz",
+    "url": "https://github.com/MarekSwiechowicz"
+  },
+  "description": "Desktop notifications for Claude Code sessions, with click-to-focus on Windows Terminal.",
+  "plugins": [
+    {
+      "name": "notify",
+      "source": "./plugins/notify",
+      "description": "Toast / notification when a session finishes a turn or waits for input; click jumps to its Windows Terminal tab.",
+      "version": "1.0.0"
+    }
+  ]
+}
