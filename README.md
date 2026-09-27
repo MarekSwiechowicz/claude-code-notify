@@ -2,9 +2,7 @@
 
 Desktop notification whenever a [Claude Code](https://claude.com/claude-code) session finishes a turn or is waiting for you. Built for people who run several Claude Code tabs at once and want to know *which one* just finished.
 
-<!-- Demo: record a short clip (several tabs, toast appears, click, terminal jumps to the tab),
-     save it as docs/demo.gif and uncomment the line below. -->
-<!-- ![Toast with the session title; clicking it switches to that Windows Terminal tab](docs/demo.gif) -->
+![Toast with the session title; clicking Show switches to that Windows Terminal tab](docs/demo.gif)
 
 ```
 /plugin marketplace add MarekSwiechowicz/claude-code-notify
