@@ -1,6 +1,8 @@
 # claude-code-notify
 
-Desktop notification whenever a [Claude Code](https://claude.com/claude-code) session finishes a turn or is waiting for you. Built for people who run several Claude Code tabs at once and want to know *which one* just finished.
+Desktop notification whenever a [Claude Code](https://claude.com/claude-code) session finishes a turn or is waiting for you, and on Windows **a click on the toast switches to that session's Windows Terminal tab**, not just the window, and also when the terminal runs as administrator. Built for people who run several Claude Code tabs at once and want to know *which one* just finished.
+
+Other notification tools stop at the window level on Windows (a toast click cannot run code without a registered COM activator). This plugin gets around that with a URL protocol and a small helper that lives inside the terminal, see [How click-to-focus works](#how-click-to-focus-works-windows).
 
 ![Toast with the session title; clicking Show switches to that Windows Terminal tab](docs/demo.gif)
 
