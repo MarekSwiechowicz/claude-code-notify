@@ -10,7 +10,7 @@
       "name": "notify",
       "source": "./plugins/notify",
       "description": "Toast / notification when a session finishes a turn or waits for input; click jumps to its Windows Terminal tab.",
-      "version": "1.0.0"
+      "version": "1.0.1"
     }
   ]
 }

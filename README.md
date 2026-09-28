@@ -22,22 +22,20 @@ Fires on two hook events:
 
 ## Install
 
-Inside Claude Code:
-
-```
-/plugin marketplace add MarekSwiechowicz/claude-code-notify
-/plugin install notify@claude-code-notify
-```
-
-That is enough for notifications on every platform. On Windows, run once more to enable click-to-focus:
+The two commands above (inside Claude Code) are enough for notifications on every platform. On Windows, run once more to enable click-to-focus:
 
 ```
 /notify:setup
 ```
 
-It copies the click handler to `%LOCALAPPDATA%\claude-code-notify` and registers a `claudefocus:` URL protocol under `HKCU` (no administrator rights). Remove it later with `plugins/notify/uninstall.ps1`.
+It copies the click handler to `%LOCALAPPDATA%\claude-code-notify` and registers a `claudefocus:` URL protocol under `HKCU` (no administrator rights). `/notify:remove` undoes exactly that; `/plugin uninstall notify@claude-code-notify` removes the hooks.
 
-Requirements: Node.js on PATH (Claude Code needs it anyway), Git Bash on Windows (ships with Git for Windows), Windows Terminal for click-to-focus.
+Requirements:
+
+- Node.js on PATH (the hook logic is a small Node script).
+- Windows: Git for Windows (the hook runs through `bash`), Windows PowerShell 5.1 (present on every Windows 10/11), Windows Terminal for click-to-focus. The toast is shown under the "Windows PowerShell" app name, that is the identity Windows requires for toasts from a script.
+- macOS: nothing extra. The first notification may ask you to allow notifications from Script Editor; allow it once.
+- Linux: `notify-send` (package `libnotify-bin` on Debian/Ubuntu).
 
 ## Options
 
@@ -77,6 +75,8 @@ Why the indirection: a process launched from a toast click runs at medium integr
 - Click-to-focus needs Windows Terminal. In other terminals the notification still shows, the click does nothing.
 - One Windows Terminal window is assumed for the fallback path; with several windows the helper targets the window that hosts the session.
 - Focus Assist / Do Not Disturb hides toasts in the notification center like any other app.
+- The session title comes from the transcript. A session started with transcript saving off (for example a child session) is announced under its folder name, and the click cannot find its tab.
+- `Stop` also fires after `/clear` and `/compact`, so you may get a notification for those.
 
 ## Development
 
